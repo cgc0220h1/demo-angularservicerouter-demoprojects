@@ -7,9 +7,4 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'demo-angularservicerouter-demoprojects';
-  isDictionaryAppOn: boolean;
-
-  showDictionaryApp(): void {
-    this.isDictionaryAppOn = this.isDictionaryAppOn !== true;
-  }
 }

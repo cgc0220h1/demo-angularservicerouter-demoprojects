@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {IWord} from '../model/IWord';
-import {DictionaryService} from '../services/dictionary.service';
-import {AuthService} from '../guard/auth.service';
+import {IWord} from '../../model/IWord';
+import {DictionaryService} from '../../services/dictionary.service';
+import {AuthService} from '../../guard/auth.service';
 
 @Component({
   selector: 'app-dictionary-page',

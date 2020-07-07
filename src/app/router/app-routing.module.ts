@@ -1,25 +1,11 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {DictionaryPageComponent} from '../dictionary-page/dictionary-page.component';
-import {DictionaryComponent} from '../dictionary/dictionary.component';
-import {DictionaryDetailComponent} from '../dictionary-detail/dictionary-detail.component';
-import {AuthGuard} from '../guard/auth.guard';
+import {DictionaryComponent} from '../old-dictionary/dictionary.component';
 import {LoginStep1Component} from '../login-step1/login-step1.component';
 import {LoginStep2Component} from '../login-step2/login-step2.component';
 
 const routes: Routes = [
-  {
-    path: 'dictionary-page',
-    component: DictionaryPageComponent,
-    children: [
-      {
-        path: ':key',
-        component: DictionaryDetailComponent,
-        canActivate: [AuthGuard]
-      }
-    ]
-  },
   {
     path: 'dictionary',
     component: DictionaryComponent
@@ -35,6 +21,10 @@ const routes: Routes = [
   {
     path: 'blog',
     loadChildren: () => import('../blog/blog.module').then(m => m.BlogModule)
+  },
+  {
+    path: 'dictionary-page',
+    loadChildren: () => import('../dictionary/dictionary.module').then(m => m.DictionaryModule)
   }
 ];
 

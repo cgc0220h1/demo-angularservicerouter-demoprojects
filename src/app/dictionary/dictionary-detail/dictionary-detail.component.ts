@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {IWord} from '../model/IWord';
 import {ActivatedRoute, ParamMap} from '@angular/router';
-import {DictionaryService} from '../services/dictionary.service';
 import {Subscription} from 'rxjs';
+import {IWord} from '../../model/IWord';
+import {DictionaryService} from '../../services/dictionary.service';
 
 @Component({
   selector: 'app-dictionary-detail',
