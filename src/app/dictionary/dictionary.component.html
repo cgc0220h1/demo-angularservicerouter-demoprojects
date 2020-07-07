@@ -1,0 +1,9 @@
+<h2 class="text-center">English-Vietnamese Dictionary</h2>
+
+<label for="search-input">Search</label>
+<input class="form-control" id="search-input" type="text" #inputElement (change)="search(inputElement.value)">
+
+<br>
+<p *ngIf="word">
+  Nghĩa của từ: {{word.key}} là <strong> {{word.meaning}}</strong>
+</p>
