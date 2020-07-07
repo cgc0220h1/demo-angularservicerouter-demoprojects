@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {DictionaryComponent} from './old-dictionary/dictionary.component';
 import {DictionaryService} from './services/dictionary.service';
-import {AppRoutingModule} from './router/app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
 import { LoginStep1Component } from './login-step1/login-step1.component';
 import { LoginStep2Component } from './login-step2/login-step2.component';
 import {ReactiveFormsModule} from '@angular/forms';
