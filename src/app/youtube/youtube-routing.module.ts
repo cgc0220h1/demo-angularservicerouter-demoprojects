@@ -7,11 +7,13 @@ import {YoutubePlaylistComponent} from './youtube-playlist/youtube-playlist.comp
 const routes: Routes = [
   {
     path: '',
-    component: YoutubePlayerComponent
-  },
-  {
-    path: 'playlist',
-    component: YoutubePlaylistComponent
+    component: YoutubePlaylistComponent,
+    children: [
+      {
+        path: ':id',
+        component: YoutubePlayerComponent
+      }
+    ]
   }];
 
 @NgModule({
