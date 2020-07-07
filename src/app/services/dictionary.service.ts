@@ -42,4 +42,7 @@ export class DictionaryService {
     return 'Not Found';
   }
 
+  getAll(): Array<IWord> {
+    return this.words;
+  }
 }

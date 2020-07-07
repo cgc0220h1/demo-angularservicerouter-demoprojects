@@ -1,0 +1,15 @@
+<h2 class="text-center">Dictionary Page</h2>
+
+<ul class="list-group">
+  <li *ngFor="let word of listWord" class="list-group-item">
+    <a [routerLink]="['/dictionary-page', word.key]">
+      {{word.key}}
+    </a>
+  </li>
+</ul>
+
+<article class="card">
+  <div class="card-body">
+    <router-outlet></router-outlet>
+  </div>
+</article>
