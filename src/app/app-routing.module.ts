@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'time-lived',
     loadChildren: () => import('./time-lived/time-lived.module').then(m => m.TimeLivedModule)
+  },
+  {
+    path: 'youtube',
+    loadChildren: () => import('./youtube/youtube.module').then(m => m.YoutubeModule)
   }
 ];
 
