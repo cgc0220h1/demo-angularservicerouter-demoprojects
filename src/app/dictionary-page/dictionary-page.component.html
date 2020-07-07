@@ -1,5 +1,10 @@
 <h2 class="text-center">Dictionary Page</h2>
 
+<div class="text-center">
+  <button class="btn btn-primary" (click)="authService.login()">Login</button>
+  <button class="btn btn-primary" (click)="authService.logout()">Logout</button>
+</div>
+
 <ul class="list-group">
   <li *ngFor="let word of listWord" class="list-group-item">
     <a [routerLink]="['/dictionary-page', word.key]">

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IWord} from '../model/IWord';
 import {DictionaryService} from '../services/dictionary.service';
+import {AuthService} from '../guard/auth.service';
 
 @Component({
   selector: 'app-dictionary-page',
@@ -10,7 +11,8 @@ import {DictionaryService} from '../services/dictionary.service';
 export class DictionaryPageComponent implements OnInit {
   listWord: IWord[] = [];
 
-  constructor(private dict: DictionaryService) {
+  constructor(private dict: DictionaryService,
+              private authService: AuthService) {
   }
 
   ngOnInit(): void {
