@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
 import {DictionaryComponent} from '../old-dictionary/dictionary.component';
 import {LoginStep1Component} from '../login-step1/login-step1.component';
 import {LoginStep2Component} from '../login-step2/login-step2.component';
+import {Routes} from '@angular/router';
 
 const routes: Routes = [
   {
@@ -32,7 +32,9 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: AppRoutingModule
+    })
   ],
   exports: [RouterModule]
 })
