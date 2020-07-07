@@ -5,7 +5,6 @@ import {IWord} from '../model/IWord';
 @Component({
   selector: 'app-dictionary',
   templateUrl: './dictionary.component.html',
-  styleUrls: ['./dictionary.component.css']
 })
 export class DictionaryComponent implements OnInit {
   word: IWord;
