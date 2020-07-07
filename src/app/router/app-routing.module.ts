@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {DictionaryComponent} from '../old-dictionary/dictionary.component';
 import {LoginStep1Component} from '../login-step1/login-step1.component';
 import {LoginStep2Component} from '../login-step2/login-step2.component';
-import {Routes} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
