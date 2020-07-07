@@ -1,15 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {IWord} from '../model/IWord';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 import {DictionaryService} from '../services/dictionary.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-dictionary-detail',
   templateUrl: './dictionary-detail.component.html',
   styleUrls: ['./dictionary-detail.component.css']
 })
-export class DictionaryDetailComponent implements OnInit {
+export class DictionaryDetailComponent implements OnInit, OnDestroy {
   word: IWord;
+  sub: Subscription;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -18,10 +20,15 @@ export class DictionaryDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const {snapshot} = this.activatedRoute;
-    const key = snapshot.paramMap.get('key');
-    const meaning = this.dict.search(key);
-    this.word = {key, meaning};
+    this.sub = this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      const key = paramMap.get('key');
+      const meaning = this.dict.search(key);
+      this.word = {key, meaning};
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
 }
