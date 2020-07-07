@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path: 'login-step-2',
     component: LoginStep2Component
+  },
+  {
+    path: 'blog',
+    loadChildren: () => import('../blog/blog.module').then(m => m.BlogModule)
   }
 ];
 
