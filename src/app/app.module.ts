@@ -10,6 +10,7 @@ import {DictionaryPageComponent} from './dictionary-page/dictionary-page.compone
 import { DictionaryDetailComponent } from './dictionary-detail/dictionary-detail.component';
 import { LoginStep1Component } from './login-step1/login-step1.component';
 import { LoginStep2Component } from './login-step2/login-step2.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,12 @@ import { LoginStep2Component } from './login-step2/login-step2.component';
     LoginStep1Component,
     LoginStep2Component
   ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        NgbModule,
+        AppRoutingModule,
+        ReactiveFormsModule
+    ],
   exports: [],
   providers: [DictionaryService],
   bootstrap: [AppComponent]
