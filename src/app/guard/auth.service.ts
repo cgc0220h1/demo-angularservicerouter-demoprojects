@@ -4,19 +4,28 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  user: any;
+  user: {
+    name: string,
+    token: string
+  };
+  admin = {
+    name: 'admin@example.com',
+    token: 'admin123456'
+  };
 
   constructor() {
   }
 
   isAuthenticated(): boolean {
-    return !!this.user;
+    const adminString = JSON.stringify(this.admin);
+    const userString = JSON.stringify(this.user);
+    return userString === adminString;
   }
 
-  login(): void {
+  login(username: string, password: string): void {
     this.user = {
-      name: 'Bob',
-      token: 'token'
+      name: username,
+      token: password
     };
   }
 

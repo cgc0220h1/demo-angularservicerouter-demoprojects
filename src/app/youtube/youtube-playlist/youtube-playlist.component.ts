@@ -7,7 +7,7 @@ import {YoutubeService} from '../../services/youtube.service';
 })
 export class YoutubePlaylistComponent implements OnInit {
 
-  constructor(private youtubeService: YoutubeService) {
+  constructor(public youtubeService: YoutubeService) {
   }
 
   ngOnInit(): void {

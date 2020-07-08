@@ -11,9 +11,9 @@ const routes: Routes = [
     children: [
       {
         path: ':id',
-        component: YoutubePlayerComponent
+        component: YoutubePlayerComponent,
       }
-    ]
+    ],
   }];
 
 @NgModule({

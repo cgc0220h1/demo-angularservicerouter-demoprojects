@@ -9,13 +9,15 @@ import {AppRoutingModule} from './app-routing.module';
 import { LoginStep1Component } from './login-step1/login-step1.component';
 import { LoginStep2Component } from './login-step2/login-step2.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {LoginBuilderComponent} from './login-builder/login-builder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DictionaryComponent,
     LoginStep1Component,
-    LoginStep2Component
+    LoginStep2Component,
+    LoginBuilderComponent
   ],
     imports: [
         BrowserModule,

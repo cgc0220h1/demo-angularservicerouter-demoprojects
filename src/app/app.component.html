@@ -30,7 +30,10 @@
 
     </ul>
     <span class="navbar-text">
-      Hello World
+      <a routerLink="login"><button class="btn btn-primary" style="margin-right: 20px">Login</button></a>
+    </span>
+    <span class="navbar-text">
+      <button class="btn btn-primary" (click)="authService.logout()">Logout</button>
     </span>
   </div>
 </nav>
