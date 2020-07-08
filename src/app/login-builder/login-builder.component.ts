@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../guard/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-builder',
@@ -9,7 +10,7 @@ import {AuthService} from '../guard/auth.service';
 export class LoginBuilderComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -23,6 +24,13 @@ export class LoginBuilderComponent implements OnInit {
     this.loginForm.markAllAsTouched();
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.get('email').value, this.loginForm.get('password').value);
+      this.router.navigateByUrl('/youtube')
+        .then(status => {
+          if (!status) {
+            alert('Cant Access');
+          }
+        })
+        .catch(() => this.router.navigateByUrl('/'));
     }
   }
 }
